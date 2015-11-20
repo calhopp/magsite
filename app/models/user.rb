@@ -38,4 +38,7 @@ class User < ActiveRecord::Base
     def downcase_email
         self.email = email.downcase
     end
+
+    has_many :topics, :dependent => :destroy
+    has_many :posts, :dependent => :destroy
 end

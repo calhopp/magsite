@@ -1,0 +1,16 @@
+<% provide(:title, 'All forums') %>
+<h1>All forums</h1>
+
+<div class="center jumbotron">
+<%= will_paginate %>
+
+<ul class="forums">
+  <% @forums.each do |forum| %>
+    <li>
+  		<%= link_to forum.title, forum %>
+	</li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
+</div>
