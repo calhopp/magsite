@@ -1,5 +1,9 @@
 class CatergoriesController < ApplicationController
-  
+
+  def index
+    @catergories = Catergory.all
+  end
+
   def show
   	@catergory = Catergory.find(params[:id])
   end

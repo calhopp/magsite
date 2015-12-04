@@ -1,8 +1,11 @@
 class ForumsController < ApplicationController
-  
+
   def index
     @forums = Forum.paginate(page: params[:page])
   end
+
+
+
   def show
   	@forum = Forum.find(params[:id])
   end

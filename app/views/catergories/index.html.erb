@@ -1,0 +1,14 @@
+<% provide(:title, 'All catergories') %>
+<h1>All catergories</h1>
+
+<div class="center jumbotron">
+
+<ul class="catergories">
+  <% @catergories.each do |catergory| %>
+    <li>
+  		<%= link_to catergory.title, catergory %>
+	</li>
+  <% end %>
+</ul>
+
+</div>
