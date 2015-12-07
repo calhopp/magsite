@@ -2,6 +2,7 @@ class CatergoriesController < ApplicationController
 
   def index
     @catergories = Catergory.all
+    @forum = Catergory.find(params[:forum_id])
   end
 
   def show

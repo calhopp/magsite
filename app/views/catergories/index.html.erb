@@ -6,7 +6,7 @@
 <ul class="catergories">
   <% @catergories.each do |catergory| %>
     <li>
-  		<%= link_to catergory.title, catergory %>
+  		<%= link_to catergory.title, forum_catergory_path(@catergories, :id) %>
 	</li>
   <% end %>
 </ul>

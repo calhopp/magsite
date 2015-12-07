@@ -1,10 +1,5 @@
 module ForumsHelper
-
-	def forum
-		#@forum.id = forum.id
-	end
-
-	def forumid
-		forumid = :forum_id
+	def currentforum
+		currentforum = Forum.find(params[:id])
 	end
 end
