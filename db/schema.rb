@@ -13,13 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20151109174540) do
 
-  create_table "catergories", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
+    t.integer  "forum_id"
     t.string   "title"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "forums_id"
   end
+
+  add_index "categories", ["forum_id"], name: "index_categories_on_forum_id"
 
   create_table "forums", force: :cascade do |t|
     t.string   "title"
@@ -29,22 +31,22 @@ ActiveRecord::Schema.define(version: 20151109174540) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "topics_id"
-    t.integer  "users_id"
+    t.integer  "topic_id"
+    t.integer  "user_id"
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "topics", force: :cascade do |t|
-    t.integer  "catergories_id"
+    t.integer  "category_id"
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "topics", ["catergories_id"], name: "index_topics_on_catergories_id"
+  add_index "topics", ["category_id"], name: "index_topics_on_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -1,0 +1,14 @@
+<% provide(:title, 'All catergories') %>
+<h1>All categories</h1>
+
+<div class="center jumbotron">
+
+<ul class="categories">
+  <% @categories.each do |category| %>
+    <li>
+  		<%= link_to category.title, forum_categories(category) %>
+	</li>
+  <% end %>
+</ul>
+
+</div>

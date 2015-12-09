@@ -1,7 +1,7 @@
 class CreateCatergories < ActiveRecord::Migration
   def change
-    create_table :catergories do |t|
-      t.belongs_to :forums, index: true
+    create_table :categories do |t|
+      t.belongs_to :forum, index: true
       t.string :title
       t.string :description
 
