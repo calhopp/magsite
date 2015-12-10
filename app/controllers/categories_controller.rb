@@ -1,8 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all.where(forum_id: @forum)
-    @forum = Category.find(params[:forum_id])
+    @categories = Category.all.where("forum_id = ?", params[:forum_id])
   end
 
   def show

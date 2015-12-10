@@ -1,0 +1,14 @@
+<% provide(:title, 'All topics') %>
+<h1>All topics</h1>
+
+<div class="center jumbotron">
+
+<ul class="topics">
+  <% @topics.each do |topic| %>
+    <li>
+  		<%= link_to topic.title, forum_category_topic_path(:forum_id,topic.category_id,topic.id) %>
+	</li>
+  <% end %>
+</ul>
+
+</div>
