@@ -5,7 +5,7 @@
 <p>
 	<%= @topic.description %>
 </p>
-<div class="col-md-8">
+<div class="center jumbotron">
     <% if @topic.posts.any? %>
       <h3>Posts (<%= @topic.posts.count %>)</h3>
       <ol class="posts">
@@ -14,3 +14,12 @@
     <%= will_paginate @posts %>
   <% end %>
 </div>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+  </div>
+<% end %>

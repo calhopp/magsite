@@ -6,6 +6,8 @@ class TopicsController < ApplicationController
    def show
   	@topic = Topic.find(params[:id])
     @posts = @topic.posts.paginate(page: params[:page])
+    @post = current_user.posts.build if logged_in?
+    
   end
 
   def new
