@@ -18,7 +18,7 @@
   <div class="row">
     <aside class="col-md-4">
       <section class="post_form">
-        <%= render 'shared/post_form' %>
+        <%= render 'shared/post_form', :locals => {:topic_id => @topic.id} %>
       </section>
     </aside>
   </div>
