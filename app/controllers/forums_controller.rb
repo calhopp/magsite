@@ -8,6 +8,7 @@ class ForumsController < ApplicationController
 
   def show
   	@forum = Forum.find(params[:id])
+    @categories = @forum.categories(params[:forum_id])
   end
 
   def new
