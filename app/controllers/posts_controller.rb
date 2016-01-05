@@ -29,3 +29,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:content, :topic_id)
     end
 end
+#I needed a change to push, so here.
