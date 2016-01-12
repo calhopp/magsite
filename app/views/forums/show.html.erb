@@ -5,6 +5,9 @@
 <p>
 	<%= @forum.description %>
 </p>
+<% if current_user.admin? %>
+<%= link_to "New Category", new_forum_category_path(@forum.id), class: "btn btn-lg btn-primary" %>
+<% end %>
 <div class="center jumbotron">
 
 <ul class="categories">

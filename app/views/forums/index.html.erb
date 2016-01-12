@@ -1,6 +1,8 @@
 <% provide(:title, 'All forums') %>
 <h1>All forums</h1>
-
+<% if current_user.admin? %>
+<%= link_to "New Forum", new_forum_path, class: "btn btn-lg btn-primary" %>
+<% end %>
 <div class="center jumbotron">
 <%= will_paginate %>
 

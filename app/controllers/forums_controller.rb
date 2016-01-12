@@ -16,14 +16,17 @@ class ForumsController < ApplicationController
   end
 
   def create
-  	@forum = Forum.new
+  	@forum = Forum.new(forum_params)
   	if @forum.save
   		flash[:success] = "Forum created."
-  		redirect_to @forum
+  		redirect_to forums_path
   	else
   		render 'new'
   	end
   end
 
   private
+  def forum_params
+    params.require(:forum).permit(:title, :description)
+  end
 end
