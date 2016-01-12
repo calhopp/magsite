@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :users
   resources :forums do
     resources :categories do
-      resources :topics 
+      resources :topics
     end
   end
   resources :posts

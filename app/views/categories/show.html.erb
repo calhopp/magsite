@@ -5,6 +5,9 @@
 <p>
 	<%= @category.description %>
 </p>
+<% if logged_in? %>
+<%= link_to "New Topic", new_forum_category_topic_path(@forum.id,@category.id), class: "btn btn-lg btn-primary" %>
+<% end %>
 <div class="center jumbotron">
 
 <ul class="topics">
@@ -16,3 +19,6 @@
 </ul>
 
 </div>
+<% if logged_in? %>
+
+<% end %>

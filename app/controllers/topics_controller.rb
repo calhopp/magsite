@@ -11,18 +11,26 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @forum = Forum.find(params[:forum_id])
+    @category = Category.find(params[:category_id])
   	@topic = Topic.new
   end
 
   def create
-  	@topic = Topic.new
+    @forum = Forum.find(params[:forum_id])
+    @category = @forum.categories.find(params[:category_id])
+  	@topic = Topic.new(topic_params)
+    @topic.category = @category
   	if @topic.save
   		flash[:success] = "Topic created."
-  		redirect_to @topic
+  		redirect_to forum_category_path(@forum.id, @category.id)
   	else
   		render 'new'
   	end
   end
 
   private
+  def topic_params
+    params.require(:topic).permit(:title, :description)
+  end
 end
