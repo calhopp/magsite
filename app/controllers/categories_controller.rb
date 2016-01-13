@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  include SessionsHelper
   before_action :admin_user, only: [:new, :create]
 
   def index

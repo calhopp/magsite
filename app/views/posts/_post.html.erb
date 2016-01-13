@@ -1,6 +1,10 @@
 <li id="post-<%= post.id %>">
   <%= link_to gravatar_for(post.user, size: 50), post.user %>
-  <span class="user"><%= link_to post.user.name, post.user %></span>
+  <span class="user"><%= link_to post.user.name, post.user %>    
+  <% if current_user.admin? %>     
+  	| <%= link_to "delete", post_path(post.id), method: :delete,
+                                  data: { confirm: "You sure?" } %></span>
+                                  <% end %>
   <span class="content"><%= markdown(post.content) %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.

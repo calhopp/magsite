@@ -14,6 +14,10 @@
   <% @topics.each do |topic| %>
     <li>
   		<%= link_to topic.title, forum_category_topic_path(@forum.id,topic.category_id,topic.id) %>
+      <% if current_user.admin? %>
+    | <%= link_to "delete", forum_category_topic_path(@forum.id, topic.category_id, topic.id), method: :delete,
+                                  data: { confirm: "You sure?" } %>
+      <% end %>
 	</li>
   <% end %>
 </ul>

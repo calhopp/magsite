@@ -1,13 +1,21 @@
 class TopicsController < ApplicationController
+
   def index
     @topics = Topic.all.where("category_id = ?", params[:category_id]) 
+  end
+
+  def destroy
+    @forum = Forum.find(params[:forum_id])
+    @category = @forum.categories.find(params[:category_id])
+    Topic.find(params[:id]).destroy
+    flash[:success] = "Topic deleted."
+    redirect_to forum_category_path(@forum, @category.id)
   end
 
    def show
   	@topic = Topic.find(params[:id])
     @posts = @topic.posts.paginate(page: params[:page])
     @post = current_user.posts.build if logged_in?
-    
   end
 
   def new

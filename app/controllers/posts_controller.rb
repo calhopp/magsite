@@ -1,5 +1,16 @@
 class PostsController < ApplicationController
+    include SessionsHelper
+
 	before_action :logged_in_user, only: [:create, :destroy]
+
+  def destroy
+    @forum = Forum.find(params[:forum_id])
+    @category = @forum.categories.find(params[:category_id])
+    @topic = @category.topics.find(params[:topic_id])
+    Post.find(params[:id]).destroy
+    flash[:success] = "Post deleted."
+    redirect_to forum_category_topic_path(@forum, @category, @topic)
+  end
 
   def create
     #user = current_user
@@ -21,6 +32,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    Post.find(params[:id]).destroy
+        flash[:success] = "Post deleted."
+        redirect_to :back
+  end
+
+  def admin
+    @admin = current_user.admin?
   end
 
   private
