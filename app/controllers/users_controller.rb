@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   	if @user.save
       log_in @user
       flash[:success] = "Welcome to the Magazine Student Website!"
-      redirect_to @user
+      redirect_to root_url
   	else
   		render 'new'
   	end
