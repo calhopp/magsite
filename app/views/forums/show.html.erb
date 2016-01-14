@@ -1,4 +1,8 @@
 <%= provide(:title, @forum.title) %>
+<span>
+	<%= link_to "Forums", forums_path %>
+	/ <%= link_to @forum.id, forum_path(@forum.id) %>
+</span>
 <h1>
 	<%= @forum.title %>
 </h1>
