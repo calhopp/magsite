@@ -1,9 +1,9 @@
 <%= provide(:title, @topic.title) %>
 <span>
   <%= link_to "Forums", forums_path %>
-  / <%= link_to "Categories", forum_path(@topic.category.forum.id) %>
-  / <%= link_to "Topics", forum_category_path(@topic.category.forum.id, @topic.category.id) %>
-  / <%= link_to @topic.id, forum_category_topic_path(@topic.category.forum.id, @topic.category.id, @topic.id) %>
+  / <%= link_to @topic.category.forum.title, forum_path(@topic.category.forum.id) %>
+  / <%= link_to @topic.category.title, forum_category_path(@topic.category.forum.id, @topic.category.id) %>
+  / <%= link_to @topic.title, forum_category_topic_path(@topic.category.forum.id, @topic.category.id, @topic.id) %>
 </span>
 <h1>
 	<%= @topic.title %>

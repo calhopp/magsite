@@ -1,8 +1,8 @@
 <%= provide(:title, @category.title) %>
 <span>
   <%= link_to "Forums", forums_path %>
-  / <%= link_to "Categories", forum_path(@category.forum.id) %>
-  / <%= link_to @category.id, forum_category_path(@category.forum.id, @category.id) %>
+  / <%= link_to @category.forum.title, forum_path(@category.forum.id) %>
+  / <%= link_to @category.title, forum_category_path(@category.forum.id, @category.id) %>
 </span>
 <h1>
 	<%= @category.title %>
