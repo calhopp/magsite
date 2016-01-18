@@ -13,7 +13,7 @@
 
 body {
 	padding-top: 60px;
-	background-color: #000;
+	background-color: #333;
 }
 
 body .container .jumbotron {
@@ -25,8 +25,8 @@ body .container .jumbotron h1 {
 }
 
 body .container .jumbotron .btn-primary {
-	background-color: #000;
-	border-color: #8A0606;
+	background-color: #8A0606;
+	border-color: #000;
 }
 
 section {
@@ -282,7 +282,10 @@ color: #fff;
   color: #fff
   }
 }
-
+input.btn.btn-primary {
+  background-color: #8A0606;
+  border-color: #000;
+  }
 
 aside {
   textarea {
