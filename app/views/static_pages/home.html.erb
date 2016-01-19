@@ -5,6 +5,9 @@
 <h2>
 	<%= render @news %>
 </h2>
+<% if current_user.admin? %>
+<%= link_to "Administrator space", admin_path, class: "btn btn-lg btn-primary" %>
+<% end %>
 <%= link_to "Forums", forums_path, class: "btn btn-lg btn-primary" %>
 </div>
 <% else %>
