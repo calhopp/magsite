@@ -1,6 +1,7 @@
 class AdminspaceController < ApplicationController
 	before_action :admin_user, only: [:admin]
 	def admin
+		@news = News.new
 	end
 	private
 	def admin_user

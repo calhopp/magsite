@@ -1,1 +1,7 @@
-hi
+<% if logged_in? %>
+<p>
+  Markdown Formatting:
+  * * = Italics  |  ** ** = Bold  |  *** *** = Bold Italics  |  # = Header text (up to 6 to change text size)  |  []()Named link w/ adress (ex. [Wasabi Sandwiches](https://www.youtube.com/channel/UCpzThG_0QFbtTqwqrNRgPDA))
+</p>
+<%= render new_news_path %>
+<% end %>

@@ -1,9 +1,9 @@
+<% @news = News.last %>
 <% if logged_in? %>
 <div class="center jumbotron">
 <h1>Welcome to the Magazine Student Website</h1>
 <h2>
-	This page is currently under construction. It will later be used as the homepage for the Magazine Student's site.
-	For my contact email, please navigate to the help page.
+	<%= render @news %>
 </h2>
 <%= link_to "Forums", forums_path, class: "btn btn-lg btn-primary" %>
 </div>
@@ -11,8 +11,7 @@
 <div class="center jumbotron">
 <h1>Welcome to the Magazine Student Website</h1>
 <h2>
-	This page is currently under construction. It will later be used as the homepage for the Magazine Student's site.
-	For my contact email, please navigate to the help page.
+	<%= render @news %>
 </h2>
 <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
