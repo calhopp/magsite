@@ -3,8 +3,10 @@
 	<%= link_to "Forums", forums_path %>
 </span>
 <h1>All forums</h1>
+<% if logged_in? %>
 <% if current_user.admin? %>
 <%= link_to "New Forum", new_forum_path, class: "btn btn-lg btn-primary" %>
+<% end %>
 <% end %>
 <div class="center jumbotron">
 <%= will_paginate %>

@@ -9,8 +9,10 @@
 <p>
 	<%= @forum.description %>
 </p>
+<% if logged_in? %>
 <% if current_user.admin? %>
 <%= link_to "New Category", new_forum_category_path(@forum.id), class: "btn btn-lg btn-primary" %>
+<% end %>
 <% end %>
 <div class="center jumbotron">
 

@@ -1,7 +1,9 @@
 <li id="news-<%= news.id %>">   
+  <% if logged_in? %>
   <% if current_user.admin? %>     
   	<%= link_to "delete", news_path(news.id), method: :delete,
                                   data: { confirm: "You sure?" } %></span>
+  <% end %>
   <% end %>
   <span class="content"><%= markdown(news.content) %></span>
   <span class="timestamp">
